@@ -10,7 +10,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">  
                 <div class="md:grid md:grid-cols-3 md:gap-6">
                     <div class="md:col-span-1">
-                        <div class="px-4 sm:px0">
+                        <div class="px-4 sm:px-0">
                             <h3 class="text-lg text-gray-900">Listado de notas</h3>
                             <p class="text-sm text-gray-600">Toma el registro correcto y ejecuta cualquier función (ver, editar o eliminar)</p>
                         </div>
@@ -23,14 +23,14 @@
                                         {{ note.excerpt }}
                                     </td>
                                     <td class="px-4 py-2">
-                                        <inertia-link :href="route('notes.show', note.id)">
+                                        <Link :href="route('notes.show', note.id)">
                                             Ver
-                                        </inertia-link>
+                                        </Link>
                                     </td>
                                     <td class="px-4 py-2">
-                                        <inertia-link :href="route('notes.edit', note.id)">
+                                        <Link :href="route('notes.edit', note.id)">
                                             Editar
-                                        </inertia-link>
+                                        </Link>
                                     </td>
                                 </tr>
                             </table>
@@ -44,9 +44,11 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
+    import { Link } from '@inertiajs/inertia-vue3'
     export default {
         components: {
             AppLayout,
+            Link,
         },
         props: {
             notes: Array,
